@@ -16,10 +16,10 @@ jobs:
 
       - name: Auto green
         run: |
-          git config --local user.email "707263256@qq.com"
-          git config --local user.name "qq674684107"
           git config --global --unset http.proxy
           git config --global --unset https.proxy
+          git config --local user.email "707263256@qq.com"
+          git config --local user.name "qq674684107"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           git commit --allow-empty -m "a commit a day keeps your girlfriend away"
